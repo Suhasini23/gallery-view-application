@@ -12,13 +12,11 @@ const ImageWrapper = styled.div(styles.__imageWrapper);
 const WrapperDiv = styled.div(styles.__wrapper);
 
 interface IMapStateToComponentProps {
-    isMobile: {},
+    fetchedData: {},
     loading: boolean
 }
 const MainLayout = (props: any) => {
-    const [images, setImages] = React.useState([]);
-    const [loaded, setIsLoaded] = React.useState(false);
-    const data = _.get(props, "isMobile", []);
+    const data = _.get(props, "fetchedData", []);
     const { loading, fetchImages } = props;
 
     return (
@@ -45,7 +43,7 @@ const MainLayout = (props: any) => {
 }
 
 const mapStateToProps = (state: IState): IMapStateToComponentProps => ({
-    isMobile: state.randomData,
+    fetchedData: _.get(state, "randomData"),
     loading: _.get(state, "loading", false)
 });
 const mapDispatchToProps = (dispatch: Dispatch<any>): any => ({

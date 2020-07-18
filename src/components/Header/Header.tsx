@@ -7,7 +7,7 @@ const ImageWrapperDiv = styled.div(styles.__imageWrapper);
 // @ts-ignore
 const WrapperDiv = styled.div(styles.__wrapper);
 
-const Header = (props: any) => {
+const Header = (props: {}) => {
     return <WrapperDiv>
         <ImageWrapperDiv>
             <img src={mainLogo} alt="logo" />

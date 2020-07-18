@@ -8,23 +8,28 @@ import MainLayout from "./components/MainLayout/MainLayout";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 const ContainerWrapper = styled.div(styles.__container);
 
-const CLPage = (props: any) => {
+interface IComponentProps {
+    fetchData: () => void;
+}
+const CLPage = (props: IComponentProps) => {
 
     useEffect(() => {
-        const { getrandoedata } = props
-        getrandoedata();
+        const { fetchData } = props
+        fetchData();
     }, []);
-    return (<div>
-        <WelcomePage />
-        <Header />
-        <ContainerWrapper>
-            <MainLayout />
-        </ContainerWrapper>
-    </div>)
+    return (
+        <div>
+            <WelcomePage />
+            <Header />
+            <ContainerWrapper>
+                <MainLayout />
+            </ContainerWrapper>
+        </div>
+    )
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): any => ({
-    getrandoedata: () => {
+    fetchData: () => {
         return (
             dispatch(getData())
         )

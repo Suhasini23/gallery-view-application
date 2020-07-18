@@ -1,7 +1,5 @@
 import React from "react";
-import mainLogo from '../../assets/logo.png';
 import * as style from "../../comman/__commanStyles";
-import SearchComponent from "../SearchComponent/SearchComponent";
 import styled from "@emotion/styled";
 import * as styles from "./__styles";
 import LeftAnimationContainer from "../WebPageLeftAnimation/WebPageLeftAnimation";

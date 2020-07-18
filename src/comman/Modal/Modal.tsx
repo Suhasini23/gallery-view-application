@@ -10,8 +10,13 @@ const Title = styled.h2(styles.__modalTitle)
 const ModalWrapper = styled.h2(styles.__modalWrapper)
 
 interface IComponentProps {
+    title: string,
+    url: string,
+    shouldOpen: boolean,
+    handleCloseClick: (value: boolean) => void
+
 }
-const ModalComp: React.FC<any> = props => {
+const ModalComp: React.FC<IComponentProps> = props => {
     const [open, setOpen] = useState(false)
     const { title, url, shouldOpen, handleCloseClick } = props;
     const onOpenModal = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import CLPage from "./CLPage";
-// import { UserForm } from "./index";
 
 const App = (props) => {
+  // @ts-ignore
   return <CLPage />
 };
 export default App;

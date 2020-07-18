@@ -8,9 +8,7 @@ interface IComponentProps {
 }
 const Loader: React.FC<IComponentProps> = props => {
     return (
-        <LoaderDiv >
-            {/* <img src={url} /> */}
-        </LoaderDiv>
+        <LoaderDiv />
     )
 };
 export default Loader;
