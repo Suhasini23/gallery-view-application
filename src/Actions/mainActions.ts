@@ -1,7 +1,7 @@
 import * as CONST from "../comman/actionTypes";
 import { Dispatch } from "redux";
 import axios from "axios";
-
+import _ from "../Utils/lodashUtils";
 
 export const setShowLoader = () => ({
     type: CONST.SHOW_LOADER,
@@ -47,7 +47,8 @@ export const getSearchedCategoryData = (keyword: string): any => {
             dispatch(setClearAllData())
             const response = await axios.get(API_URL)
             if ((response && response.data)) {
-                dispatch(setAllData(response.data))
+                const data = _.get(response, "data.results", [])
+                dispatch(setAllData(data))
                 dispatch(setHideLoader())
             }
         } catch (ex) {

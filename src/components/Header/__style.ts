@@ -5,6 +5,12 @@ export const __imageWrapper = () => ({
     img: {
         width: "77px",
         margin: "10px 20px"
+    },
+    "@media only screen and (max-width: 768px)": {
+        img: {
+            width: "45px",
+            margin: "27px 20px"
+        },
     }
 });
 

@@ -31,7 +31,6 @@ export const __title = (props: object) => ({
   "@media only screen and (max-width: 768px)": {
     fontSize: "26px",
     textAlign: "center"
-
   }
 }
 );

@@ -10,6 +10,9 @@ export const __wrapper = () => ({
     img: {
         width: "20px",
         padding: "5px 0px 5px 15px"
+    },
+    "@media only screen and (max-width: 768px)": {
+        width: "270px",
     }
 });
 export const __searchInput = (props: object) => ({
@@ -22,8 +25,8 @@ export const __searchInput = (props: object) => ({
     paddingLeft: "15px",
 
     "@media only screen and (max-width: 768px)": {
-        width: "90%",
-        fontSize: "14px",
+        width: "60%",
+        fontSize: "13px",
         paddingLeft: "10px"
     }
 });
