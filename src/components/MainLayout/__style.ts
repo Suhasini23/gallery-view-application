@@ -6,3 +6,11 @@ export const __imageWrapper = (props) => ({
     paddingTop: "120px"
 }
 );
+export const __wrapper = (props) => ({
+    ".infinite-scroll-component__outerdiv": {
+        ".infinite-scroll-component": {
+            overflow: "unset !important"
+        }
+    }
+}
+);

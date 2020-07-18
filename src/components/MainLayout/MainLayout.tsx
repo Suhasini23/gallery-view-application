@@ -7,7 +7,9 @@ import { IState } from "../../comman/GenericInterface";
 import * as styles from "./__style";
 import { getData } from "../../Actions/mainActions";
 import ImageComponent from "../ImageComponent/ImageComponent";
+import Loader from "../../comman/Loader/Loader";
 const ImageWrapper = styled.div(styles.__imageWrapper);
+const WrapperDiv = styled.div(styles.__wrapper);
 
 interface IMapStateToComponentProps {
     isMobile: {},
@@ -20,23 +22,24 @@ const MainLayout = (props: any) => {
     const { loading, fetchImages } = props;
 
     return (
-        <InfiniteScroll
-            dataLength={data.length}
-            next={() => fetchImages(5)}
-            hasMore={true}
-            loader={
-                <img
-                    src="https://res.cloudinary.com/chuloo/image/upload/v1550093026/scotch-logo-gif_jq4tgr.gif"
-                    alt="loading"
-                />}
-        >
-            <ImageWrapper>
-                {
-                    data.map((image, index) => (
-                        <ImageComponent url={image.urls.regular} key={index} />
-                    ))}
-            </ImageWrapper>
-        </InfiniteScroll>
+        <WrapperDiv>
+            <InfiniteScroll
+                dataLength={data.length}
+                next={() => fetchImages(5)}
+                hasMore={true}
+                loader={
+                    <Loader />
+                }
+            >
+                <ImageWrapper>
+                    {
+                        data.map((image, index) => (
+                            <ImageComponent url={image.urls.regular} key={index} />
+                        ))}
+                </ImageWrapper>
+            </InfiniteScroll>
+        </WrapperDiv>
+
     )
 
 }

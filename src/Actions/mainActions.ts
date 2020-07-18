@@ -34,3 +34,20 @@ export const getData = (count = 10): any => {
     };
 };
 
+export const getSearchedCategoryData = (keyword: string): any => {
+    const API_KEY = "8z0Z4beHzJOnKDoOeGEByREs3jhLV6vapHu2T12zjPs";
+    // const API_URL = `https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=${count}`;
+    return async (dispatch: Dispatch<any>) => {
+        try {
+            dispatch(setShowLoader())
+            const response = await axios.get("ww")
+            if ((response && response.data)) {
+                dispatch(setAllData(response.data))
+                dispatch(setHideLoader())
+            }
+        } catch (ex) {
+            console.log(ex);
+        }
+    };
+};
+
