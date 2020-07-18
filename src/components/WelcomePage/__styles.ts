@@ -2,143 +2,174 @@ import colors from "../../comman/style/color";
 import fonts from "../../comman/style/fonts";
 import { keyframes } from "@emotion/core";
 export const __wrapper = (props: object) => ({
-    backgroundColor: colors.extremeBlack,
-    display: "flex",
-    height: "100vh",
+  backgroundColor: colors.extremeBlack,
+  display: "flex",
+  height: "100vh",
 }
 );
 
 
 export const __detailWrapper = (props: object) => ({
-    display: "grid",
-    gridTemplateColumns: "65% auto",
-    border: "7px solid white",
-    margin: "80px 0 0px 0px",
-    height: "80vh",
-    background: "#000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg)"
+  display: "grid",
+  gridTemplateColumns: "65% auto",
+  border: "7px solid white",
+  margin: "80px 0 0px 0px",
+  height: "80vh",
+  background: "#000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg)",
+  "@media only screen and (max-width: 768px)": {
+    margin: "9px 0px 0px 0px",
+    width: "unset",
+    gridTemplateColumns: "auto",
+    height: "95vh"
+  }
+
 }
 );
 
 export const __title = (props: object) => ({
-  fontSize: "36px"
+  fontSize: "36px",
+  "@media only screen and (max-width: 768px)": {
+    fontSize: "26px",
+    textAlign: "center"
+
+  }
 }
 );
 
 
 export const __titleWrapper = (props: object) => ({
-    color: colors.white,
-    fontFamily: fonts.mediumFont,
-    marginTop: "50px",
-    padding: "140px",
-    h3: {
-        fontSize: "40px",
-        margin: "0px 0 15px"
-    }
+  color: colors.white,
+  fontFamily: fonts.mediumFont,
+  marginTop: "50px",
+  padding: "140px",
+  "@media only screen and (max-width: 768px)": {
+    padding: "unset",
+  }
 }
 );
 
-export const __glitch = (props: object) => ({
-    fontSize: "30px",
+export const __subTitleWrapper = (props: object) => ({
+  "@media only screen and (max-width: 768px)": {
+
+    paddingTop: "62px",
+    margin: "0 25px",
     textAlign: "center",
-    position: "relative",
-    animation: `${shake} .4s infinite`,
-    animationDirection: "alternate",
+  }
+}
+);
 
-    span: {
-        "&:first-child" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: 0
-        },
-        "&:nth-child(2)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "25px"
-        },
-        "&:nth-child(3)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "50px"
-        },
-        "&:nth-child(4)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "75px"
-        },
-        "&:nth-child(5)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "100px"
-        },
-        "&:nth-child(6)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "125px"
-        },
-        "&:nth-child(7)" : {
-            color: "#0301FA",
-            animation: `${glitch} .4s linear infinite`,
-            animationDirection: "alternate",
-            position: "absolute",
-            transform: "translateY(0px)",
-            left: "150px"
-        },
 
-    }
+export const __glitch = (props: object) => ({
+  fontSize: "30px",
+  textAlign: "center",
+  position: "relative",
+  animation: `${shake} .4s infinite`,
+  animationDirection: "alternate",
+
+  span: {
+    "&:first-child": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: 0
+    },
+    "&:nth-child(2)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "25px"
+    },
+    "&:nth-child(3)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "50px"
+    },
+    "&:nth-child(4)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "75px"
+    },
+    "&:nth-child(5)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "100px"
+    },
+    "&:nth-child(6)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "125px"
+    },
+    "&:nth-child(7)": {
+      color: "#0301FA",
+      animation: `${glitch} .4s linear infinite`,
+      animationDirection: "alternate",
+      position: "absolute",
+      transform: "translateY(0px)",
+      left: "150px"
+    },
+
+  }
 }
 );
 
 
 export const __glitchOpacity = (props: object) => ({
-    fontSize: "30px",
-    textAlign: "center",
-    color: "#EEEEEE",
-    position: "absolute",
-    top: "0",
-    left: "-2px",
-    animation: `${show} .2s infinite`,
-    animationDirection: "alternate",
-    span : {
-        color: "#F802F8"
-      }
+  fontSize: "30px",
+  textAlign: "center",
+  color: "#EEEEEE",
+  position: "absolute",
+  top: "0",
+  left: "-2px",
+  animation: `${show} .2s infinite`,
+  animationDirection: "alternate",
+  span: {
+    color: "#F802F8"
+  }
 }
 );
 
 export const __glitchFixed = (props: object) => ({
-    fontSize: "30px",
-    textAlign: "center",
-    color: "#EEEEEE",
-    position: "relative",
-    animation: `${color} .4s infinite`,
-    animationDirection: "alternate",
+  fontSize: "30px",
+  textAlign: "center",
+  color: "#EEEEEE",
+  position: "relative",
+  animation: `${color} .4s infinite`,
+  animationDirection: "alternate",
 }
 );
 
 
 
 export const __filpWrapper = () => ({
-    position: "absolute",
-    top: "45%",
-    marginLeft: "85px",
-    transform: "translateX(-50%) translateY(-50%)",
+  position: "absolute",
+  // top: "45%",
+  // marginLeft: "85px",
+  top: "288px",
+  marginLeft: "22px",
+  // transform: "translateX(-50%) translateY(-50%)",
+  "@media only screen and (max-width: 768px)": {
+    top: "100px",
+    marginLeft: "0px",
+    right: "140px",
+
+  }
+
 })
 
 const show = keyframes`

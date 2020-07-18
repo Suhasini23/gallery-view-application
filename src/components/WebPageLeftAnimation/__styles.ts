@@ -92,5 +92,8 @@ export const __cameraLed = (props: object) => ({
 
 export const __wrapper = (props: object) => ({
     padding: "150px 0",
+    "@media only screen and (max-width: 768px)": {
+        display: "none"
+    }
 
 })

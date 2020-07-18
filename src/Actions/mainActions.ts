@@ -45,7 +45,7 @@ export const getSearchedCategoryData = (keyword: string): any => {
         try {
             dispatch(setShowLoader())
             dispatch(setClearAllData())
-            const response = await axios.get("API_URL")
+            const response = await axios.get(API_URL)
             if ((response && response.data)) {
                 dispatch(setAllData(response.data))
                 dispatch(setHideLoader())

@@ -34,7 +34,7 @@ const MainLayout = (props: any) => {
                 <ImageWrapper>
                     {
                         data.map((image, index) => (
-                            <ImageComponent url={image.urls.regular} key={index} />
+                            <ImageComponent url={image.urls.regular} key={index} title={image.alt_description} />
                         ))}
                 </ImageWrapper>
             </InfiniteScroll>

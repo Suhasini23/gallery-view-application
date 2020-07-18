@@ -10,6 +10,7 @@ import constants from "../../comman/style/contants";
 const Wrapper = styled.div(styles.__wrapper);
 const ContainerWrapper = styled.div(style.__container);
 const DetailsWrapper = styled.div(styles.__detailWrapper);
+// @ts-ignore
 const TitleWrapper = styled.div(styles.__titleWrapper);
 // @ts-ignore
 const FlipWrapper = styled.span(styles.__filpWrapper);
@@ -20,8 +21,10 @@ const GlitchFixed = styled.p(styles.__glitchFixed);
 // @ts-ignore
 
 const GlitchOpacity = styled.p(styles.__glitchOpacity);
+// @ts-ignore
 const Title = styled.p(styles.__title);
-
+// @ts-ignore
+const SubTitle = styled.p(styles.__subTitleWrapper);
 const WelcomePage = (props: any) => {
 
     const renderWord = () => {
@@ -53,7 +56,7 @@ const WelcomePage = (props: any) => {
                 <DetailsWrapper>
                     <TitleWrapper>
                         <Title>Welcome to the  {renderWordflipAnimation()} </Title>
-                        <p>{constants.extraText}</p>
+                        <SubTitle>{constants.extraText}</SubTitle>
                     </TitleWrapper>
                     <LeftAnimationContainer />
                 </DetailsWrapper>

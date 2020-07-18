@@ -38,8 +38,6 @@ const LeftAnimationContainer = (props: any) => {
                 </CameraLedDiv>
                 <CameraBtnDiv />
             </CameraDiv>
-            <CameraShadowDiv />
-            <p>Explore your galaxy</p>
         </WrapperDiv>
     )
 }
