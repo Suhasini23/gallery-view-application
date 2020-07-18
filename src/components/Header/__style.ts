@@ -3,23 +3,18 @@ import colors from "../../comman/style/color";
 
 export const __imageWrapper = () => ({
     img: {
-        width: "60px",
-        marginTop: "7px"
+        width: "77px",
+        margin: "10px 20px"
     }
 });
 
 export const __wrapper = () => ({
     display: "flex",
-    height: "75px",
+    height: "99px",
     background: colors.white,
-    // marginRight: "auto",
-    // marginLeft: "auto",
-    // paddingLeft: "24px",
-    // paddingRight: "24p",
     position: "sticky",
     top: 0,
     width: "100%",
-    // position: "fixed",
     zIndex: "1007",
     boxShadow: "0 3px 6px 0 rgba(0,0,0,0.15)"
 });

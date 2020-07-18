@@ -19,6 +19,12 @@ export const __detailWrapper = (props: object) => ({
 }
 );
 
+export const __title = (props: object) => ({
+  fontSize: "36px"
+}
+);
+
+
 export const __titleWrapper = (props: object) => ({
     color: colors.white,
     fontFamily: fonts.mediumFont,
@@ -31,41 +37,175 @@ export const __titleWrapper = (props: object) => ({
 }
 );
 
-
-export const __filpWrapper = () => ({
-    display: "inline",
-    fontSize: "65px",
-    fontWeight: "800",
+export const __glitch = (props: object) => ({
+    fontSize: "30px",
+    textAlign: "center",
+    position: "relative",
+    animation: `${shake} .4s infinite`,
+    animationDirection: "alternate",
 
     span: {
-        animation: ` ${animateWord} 7.5s linear infinite 0s`,
-        "-ms-animation": `${animateWord} 7.5s linear infinite 0s`,
-        "-webkit-animation": `${animateWord} 7.5s linear infinite 0s`,
-        color: colors.yellow,
-        opacity: 0,
-        overflow: "hidden",
-        position: "absolute",
-        "&:nth-child(2)": {
-            animationDelay: "2.5s",
+        "&:first-child" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: 0
         },
-        "&:nth-child(3)": {
-            animationDelay: "5s",
-            "-ms-animation-delay": "5s",
-            "-webkit-animation-delay": "5s",
+        "&:nth-child(2)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "25px"
+        },
+        "&:nth-child(3)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "50px"
+        },
+        "&:nth-child(4)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "75px"
+        },
+        "&:nth-child(5)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "100px"
+        },
+        "&:nth-child(6)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "125px"
+        },
+        "&:nth-child(7)" : {
+            color: "#0301FA",
+            animation: `${glitch} .4s linear infinite`,
+            animationDirection: "alternate",
+            position: "absolute",
+            transform: "translateY(0px)",
+            left: "150px"
         },
 
-        "@media screen and (max-width: 786px)": {
-        }
     }
+}
+);
 
+
+export const __glitchOpacity = (props: object) => ({
+    fontSize: "30px",
+    textAlign: "center",
+    color: "#EEEEEE",
+    position: "absolute",
+    top: "0",
+    left: "-2px",
+    animation: `${show} .2s infinite`,
+    animationDirection: "alternate",
+    span : {
+        color: "#F802F8"
+      }
+}
+);
+
+export const __glitchFixed = (props: object) => ({
+    fontSize: "30px",
+    textAlign: "center",
+    color: "#EEEEEE",
+    position: "relative",
+    animation: `${color} .4s infinite`,
+    animationDirection: "alternate",
+}
+);
+
+
+
+export const __filpWrapper = () => ({
+    position: "absolute",
+    top: "45%",
+    marginLeft: "85px",
+    transform: "translateX(-50%) translateY(-50%)",
 })
 
-const animateWord = keyframes`
-  0% { opacity: 0; }
-	7.5% { opacity: 0; -webkit-transform: translateY(-40px); }
-	15% { opacity: 1; -webkit-transform: translateY(0px); }
-	40% { opacity: 1; -webkit-transform: translateY(0px); }
-	49% { opacity: 0; -webkit-transform: translateY(40px); }
-	60% { opacity: 0; }
-	100% { opacity: 0; }
+const show = keyframes`
+50% {
+    opacity: 0;
+    text-shadow: 2px 2px #AAE90E;
+  }
+`;
+
+const color = keyframes`
+50% {
+    color: #b1b1b1;
+  }
+`;
+
+
+const shake = keyframes`
+0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+`;
+
+
+const glitch = keyframes`
+0% {
+    transform: translateY(-10%);
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateY(-10%);
+    transform: translateX(-10%);
+    color: #01FA01;
+  }
+  100% {
+    transform: translateY(10%);
+    transform: translateX(5%);
+    color: #FA0103;
+    clip: rect(40px, 0px, 40px, 0px);
+  }
 `;

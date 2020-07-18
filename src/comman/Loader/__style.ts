@@ -11,6 +11,7 @@ export const __loader = (props: object) => ({
     borderRadius: "50%",
     borderTop: "16px solid #3498db",
     width: "120px",
+    margin: "auto",
     height: "120px",
     webkitAnimation: `${spin} 2s linear infinite`, /* Safari */
     animation: `${spin} 2s linear infinite`,

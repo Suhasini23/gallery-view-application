@@ -5,23 +5,45 @@ import SearchComponent from "../SearchComponent/SearchComponent";
 import styled from "@emotion/styled";
 import * as styles from "./__styles";
 import LeftAnimationContainer from "../WebPageLeftAnimation/WebPageLeftAnimation";
+import constants from "../../comman/style/contants";
 // @ts-ignore
 const Wrapper = styled.div(styles.__wrapper);
 const ContainerWrapper = styled.div(style.__container);
 const DetailsWrapper = styled.div(styles.__detailWrapper);
 const TitleWrapper = styled.div(styles.__titleWrapper);
 // @ts-ignore
-const FlipWrapper = styled.p(styles.__filpWrapper);
+const FlipWrapper = styled.span(styles.__filpWrapper);
+// @ts-ignore
+const Glitch = styled.p(styles.__glitch);
+// @ts-ignore
+const GlitchFixed = styled.p(styles.__glitchFixed);
+// @ts-ignore
+
+const GlitchOpacity = styled.p(styles.__glitchOpacity);
+const Title = styled.p(styles.__title);
 
 const WelcomePage = (props: any) => {
 
+    const renderWord = () => {
+        return (
+            <>
+                <span>G</span>
+                <span>A</span>
+                <span>L</span>
+                <span>L</span>
+                <span>E</span>
+                <span>R</span>
+                <span>Y</span>
+            </>
+        )
+    }
+
     const renderWordflipAnimation = () => {
-        const wordFlipArr = ["FRONTROW", "MEMORIES", "GALLERY"];
         return (
             <FlipWrapper>
-                {wordFlipArr.map((item: string, index: number) => {
-                    return <span key={index}>{item}</span>;
-                })}
+                <Glitch>{renderWord()}</Glitch>
+                <GlitchFixed>{renderWord()}</GlitchFixed>
+                <GlitchOpacity>{renderWord()}</GlitchOpacity>
             </FlipWrapper>
         );
     };
@@ -30,9 +52,8 @@ const WelcomePage = (props: any) => {
             <ContainerWrapper>
                 <DetailsWrapper>
                     <TitleWrapper>
-                        <h3>Welcome</h3>
-                        <h3>to the</h3>
-                        {renderWordflipAnimation()}
+                        <Title>Welcome to the  {renderWordflipAnimation()} </Title>
+                        <p>{constants.extraText}</p>
                     </TitleWrapper>
                     <LeftAnimationContainer />
                 </DetailsWrapper>

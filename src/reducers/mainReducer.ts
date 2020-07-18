@@ -22,6 +22,12 @@ export const mainReducer = (
                 randomData: [...state.randomData, ...action.payload]
             };
         }
+        case CONST.CLEAR_ALL_DATA: {
+            return {
+                ...state,
+                randomData: []
+            };
+        }
         default:
             return state;
     }

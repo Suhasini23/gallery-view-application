@@ -17,6 +17,10 @@ export const setAllData = (response) => ({
     payload: response
 });
 
+export const setClearAllData = () => ({
+    type: CONST.CLEAR_ALL_DATA,
+});
+
 export const getData = (count = 10): any => {
     const API_KEY = "8z0Z4beHzJOnKDoOeGEByREs3jhLV6vapHu2T12zjPs";
     const API_URL = `https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=${count}`;
@@ -36,11 +40,12 @@ export const getData = (count = 10): any => {
 
 export const getSearchedCategoryData = (keyword: string): any => {
     const API_KEY = "8z0Z4beHzJOnKDoOeGEByREs3jhLV6vapHu2T12zjPs";
-    // const API_URL = `https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=${count}`;
+    const API_URL = `https://api.unsplash.com/search/photos?client_id=${API_KEY}&query=${keyword}`;
     return async (dispatch: Dispatch<any>) => {
         try {
             dispatch(setShowLoader())
-            const response = await axios.get("ww")
+            dispatch(setClearAllData())
+            const response = await axios.get("API_URL")
             if ((response && response.data)) {
                 dispatch(setAllData(response.data))
                 dispatch(setHideLoader())
